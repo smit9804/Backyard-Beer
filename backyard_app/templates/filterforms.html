@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<style>
+    body{
+        background-image: url("/static/images/filterform.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: 100% 50%;
+        background-size: cover;
+    }
+</style>
+<body>
+    <div class="p-5">
+        <a href="/logout" style="float: right"class="redie">Logout</a> <br>
+        <img src= '/static/images/beer_logo.jpg' alt='Beer_logo' style="height: 100px; width: 100px; align-content: right" />
+    </div>
+    <a class="p-3 color" style = 'color:white' href="/main">Back To Main Page</a><br><br><br>
+    <a class="p-3 redie" style = 'color:white' href="/allbeers">Back to All Backyard Beer Entries!</a>
+    <div class ='p-3'><br><br><br><br><br>
+    <h1 class = 'text-center' style='color:white'>Backyard Beer</h1>
+    <h2 class = 'text-center' style='color:white'>Filter by Choice</h1>
+    
+    </div><br>
+    <div class = 'text-center'>
+        <h3 style = 'color:white'>What state are you in?</h3>
+        <form action="/filterstate" method="POST">
+        {% csrf_token %}
+        <select name="state" >
+            <option value="AL">AL</option>
+            <option value="AK">AK</option>
+            <option value="AZ">AZ</option>
+            <option value="AR">AR</option>
+            <option value="CA">CA</option>
+            <option value="CO">CO</option>
+            <option value="CT">CT</option>
+            <option value="DE">DE</option>
+            <option value="DC">DC</option>
+            <option value="FL">FL</option>
+            <option value="GA">GA</option>
+            <option value="HI">HI</option>
+            <option value="ID">ID</option>
+            <option value="IL">IL</option>
+            <option value="IN">IN</option>
+            <option value="IA">IA</option>
+            <option value="KS">KS</option>
+            <option value="KY">KY</option>
+            <option value="LA">LA</option>
+            <option value="ME">ME</option>
+            <option value="MD">MD</option>
+            <option value="MA">MA</option>
+            <option value="MI">MI</option>
+            <option value="MN">MN</option>
+            <option value="MS">MS</option>
+            <option value="MO">MO</option>
+            <option value="MT">MT</option>
+            <option value="NE">NE</option>
+            <option value="NV">NV</option>
+            <option value="NH">NH</option>
+            <option value="NJ">NJ</option>
+            <option value="NM">NM</option>
+            <option value="NY">NY</option>
+            <option value="NC">NC</option>
+            <option value="ND">ND</option>
+            <option value="OH">OH</option>
+            <option value="OK">OK</option>
+            <option value="OR">OR</option>
+            <option value="PA">PA</option>
+            <option value="RI">RI</option>
+            <option value="SC">SC</option>
+            <option value="SD">SD</option>
+            <option value="TN">TN</option>
+            <option value="TX">TX</option>
+            <option value="UT">UT</option>
+            <option value="VT">VT</option>
+            <option value="VA">VA</option>
+            <option value="WA">WA</option>
+            <option value="WV">WV</option>
+            <option value="WI">WI</option>
+            <option value="WY">WY</option>
+        </select>
+        <input type="submit" class="button" value="Chug" class="chug">
+        </form><br><br>
+
+        <h3 style = 'color:white'>What's your backyard?</h3>
+        
+        <form action="/filtercity" method="POST">
+        {% csrf_token %}
+            <input type="text" name="city" placeholder="City?">
+            <input type="submit" class="button" value="Chug">
+        </form><br><br>
+
+        <h3 style = 'color:white' >Choose your Beer</h3>
+        
+        <form action="/filterbeer" method="POST">
+        {% csrf_token %}
+            <select name="beer">
+                <option value="Beck's">Becks</option>
+                <option value="Black Ice">Black Ice</option>
+                <option value="Blue Moon">Blue Moon</option>
+                <option value="Blue Moon Light Sky">Blue Moon Light Sky</option>
+                <option value="Bud Light">Bud Light</option>
+                <option value="Bud Light Lime">Bud Light Lime</option>
+                <option value="Bud Light Peels">Bud Light Peels</option>
+                <option value="Bud Light Platinum">Bud Light Platinum</option>
+                <option value="Budweiser">Budweiser</option>
+                <option value="Budweiser Select">Budweiser Select</option>
+                <option value="Budweiser Select 55">Budweiser Select 55</option>
+                <option value="Busch">Busch</option>
+                <option value="Busch Ice">Busch Ice</option>
+                <option value="Busch Light">Busch Light</option>
+                <option value="Busch Light Apple">Busch Light Apple</option>
+                <option value="Coors">Coors</option>
+                <option value="Coors Banquet">Coors Banquet</option>
+                <option value="Coors Edge">Coors Edge</option>
+                <option value="Coors Light">Coors Light</option>
+                <option value="Corona Extra">Corona Extra</option>
+                <option value="Corona Familiar">Corona Familiar</option>
+                <option value="Corona Light">Corona Light</option>
+                <option value="Corona Premier">Corona Premier</option>
+                <option value="Dos Equis">Dos Equis</option>
+                <option value="Fat Tire">Fat Tire</option>
+                <option value="Fosters">Fosters</option>
+                <option value="George Killians Irish Red">George Killian's Irish Red</option>
+                <option value="Great Lakes">Great Lakes</option>
+                <option value="Guinness">Guinness</option>
+                <option value="Hamms">Hamms</option>
+                <option value="Heineken">Heineken</option>
+                <option value="Heineken Light">Heineken Light</option>
+                <option value="Icehouse">Icehouse</option>
+                <option value="Keystone">Keystone</option>
+                <option value="Keystone Light">Keystone Light</option>
+                <option value="Landshark Lager">Landshark Lager</option>
+                <option value="Leinenkugels">Leinenkugels</option>
+                <option value="Michelob Light">Michelob Light</option>
+                <option value="Michelob Ultra">Michelob Ultra</option>
+                <option value="Michelob Ultra Pure Gold">Michelob Ultra Pure Gold</option>
+                <option value="Mickeys">Mickeys</option>
+                <option value="Miller 64">Miller 64</option>
+                <option value="Miller Genuine Draft">Miller Genuine Draft</option>
+                <option value="Miller High Life">Miller High Life</option>
+                <option value="Miller Lite">Miller Lite</option>
+                <option value="Milwaukee's Best">Milwaukee's Best</option>
+                <option value="Milwaukee's Best Ice">Milwaukee's Best Ice</option>
+                <option value="Modelo">Modelo</option>
+                <option value="Modelo Especial">Modelo Especial</option>
+                <option value="Molson">Molson</option>
+                <option value="Molson Canadian">Molson Canadian</option>
+                <option value="Natty Daddy">Natty Daddy</option>
+                <option value="Natty Daddy Lemonade">Natty Daddy Lemonade</option>
+                <option value="Natural Ice">Natural Ice</option>
+                <option value="Natural Light">Natural Light</option>
+                <option value="Naturdays">Naturdays</option>
+                <option value="Pabst Blue Ribbon">Pabst Blue Ribbon</option>
+                <option value="Red Stripe">Red Stripe</option>
+                <option value="Redd's Apple Ale">Redd's Apple Ale</option>
+                <option value="Redd's Wicked">Redd's Wicked</option>
+                <option value="Rolling Rock">Rolling Rock</option>
+                <option value="Samuel Adams">Samuel Adams</option>
+                <option value="Shiner Bock">Shiner Bock</option>
+                <option value="Shock Top">Shock Top</option>
+                <option value="St. Pauli Girl">St. Pauli Girl</option>
+                <option value="Steel Reserve">Steel Reserve</option>
+                <option value="Stella Artois">Stella Artois</option>
+                <option value="Yuengling Black & Tan">Yuengling Black & Tan</option>
+                <option value="Yuengling Flight">Yuengling Flight</option>
+                <option value="Yuengling Golden Pilsner">Yuengling Golden Pilsner</option>
+                <option value="Yuengling Lager">Yuengling Lager</option>
+                <option value="Yuengling Light">Yuengling Light</option>
+                <option value="Yuengling Light Lager">Yuengling Light Lager</option>
+                <option value="Yuengling Porter">Yuengling Porter</option>
+                <option value="Yuengling Premium">Yuengling Premium</option>
+            </select>
+            <input type="submit" class="button" value="Chug">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backyard Beer Homepage</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<style>
+    body{
+        background-image: url("/static/images/mainbeer.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: 100% 50%;
+        background-size: cover;
+    }
+</style>
+
+<body>
+    <div class = 'justify-content-between p-5' style = 'color:white'>
+        <a href ="/logout" style="float: right" class="redie">Logout</a>
+        <img src= '/static/images/beer_logo.jpg' alt='Beer_logo' style="height: 100px; width: 100px; align-content: right" />
+    <div class = "head">
+        <h2 class = 'text-center' style = 'color:white'>Welcome to Backyard Beer, {{this_user.name}}!</h2>
+    </div>
+
+    <div id = 'navbar'>
+        <ul class="nav justify-content-around">
+            <li class="nav-item">
+                <a class="bluie"  href="/allbeers">See All Backyard Beer Entries!</a>
+            </li>
+            <li class="nav-item">
+                <a class="greenie" style = 'color:white' href="/filterforms">Find What's in Your Backyard!</a>
+            </li>
+        </ul>
+        <br><br>
+        <div class="text-center">
+            <p class = 'fs-4 text-wrap' style = 'color:white; background-color: #9e1b32; border-radius: 5px; opacity:.85'>Welcome to the app you wish you had in college. <br> This app was inspired by the well-known app called <a href style = 'color:white' ="gasbuddy.com">Gas Buddy</a>. The concept for this app is to provide the user the necessary info for the best bargain for buying beer at your local gas stations or corner stores. All you have to do as a member is put in the information asked for in <a href="/beerform" style="text-decoration: none; color: #fff600">THIS</a> form. </p>
+        </div>
+    
+        <img id="school" src="" alt="">
+        <h4 id="name"></h4>
+    </div>
+
+    <div class = 'text-center'>
+        <h3 style="color:palegoldenrod; background-color: #9e1b32; opacity: .9">What state are you in?</h3>
+        
+        <form action="/filterstate" method="POST">
+        {% csrf_token %}
+        <select name="state" >
+            <option value="AL">AL</option>
+            <option value="AK">AK</option>
+            <option value="AZ">AZ</option>
+            <option value="AR">AR</option>
+            <option value="CA">CA</option>
+            <option value="CO">CO</option>
+            <option value="CT">CT</option>
+            <option value="DE">DE</option>
+            <option value="DC">DC</option>
+            <option value="FL">FL</option>
+            <option value="GA">GA</option>
+            <option value="HI">HI</option>
+            <option value="ID">ID</option>
+            <option value="IL">IL</option>
+            <option value="IN">IN</option>
+            <option value="IA">IA</option>
+            <option value="KS">KS</option>
+            <option value="KY">KY</option>
+            <option value="LA">LA</option>
+            <option value="ME">ME</option>
+            <option value="MD">MD</option>
+            <option value="MA">MA</option>
+            <option value="MI">MI</option>
+            <option value="MN">MN</option>
+            <option value="MS">MS</option>
+            <option value="MO">MO</option>
+            <option value="MT">MT</option>
+            <option value="NE">NE</option>
+            <option value="NV">NV</option>
+            <option value="NH">NH</option>
+            <option value="NJ">NJ</option>
+            <option value="NM">NM</option>
+            <option value="NY">NY</option>
+            <option value="NC">NC</option>
+            <option value="ND">ND</option>
+            <option value="OH">OH</option>
+            <option value="OK">OK</option>
+            <option value="OR">OR</option>
+            <option value="PA">PA</option>
+            <option value="RI">RI</option>
+            <option value="SC">SC</option>
+            <option value="SD">SD</option>
+            <option value="TN">TN</option>
+            <option value="TX">TX</option>
+            <option value="UT">UT</option>
+            <option value="VT">VT</option>
+            <option value="VA">VA</option>
+            <option value="WA">WA</option>
+            <option value="WV">WV</option>
+            <option value="WI">WI</option>
+            <option value="WY">WY</option>
+        </select>
+        <input type="submit" class="button" value="Chug" class="chug">
+        </form>
+    </div>
+</body>
+</html>

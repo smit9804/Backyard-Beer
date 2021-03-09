@@ -1,0 +1,126 @@
+.header {
+    background-image: linear-gradient(cadetblue, antiquewhite);
+    background-repeat: no-repeat;
+    padding: 10px;
+}
+
+.header a{
+    background-image: linear-gradient(red, firebrick);
+    color: antiquewhite;
+    border: 1px solid brown;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 3px;
+}
+
+.beerform a{
+    background-image: linear-gradient(antiquewhite, goldenrod);
+    color:rgb(59, 24, 24);
+    border: 1px solid goldenrod;
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 3px;
+}
+
+.button{
+    background-image: linear-gradient(antiquewhite, goldenrod);
+    color:rgb(59, 24, 24);
+    border: 1px solid goldenrod;
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 3px;
+}
+
+.greenie{
+    background-image: linear-gradient(rgb(0, 221, 0), forestgreen);
+    color: rgb(203, 255, 203);
+    border: 1px solid yellowgreen;
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 3px;
+}
+
+.yellowie {
+    background-image: linear-gradient(gold, #cd9b1d);
+    border: 1px solid rgb(218, 218, 0);
+    border-radius: 3px;
+    text-decoration: none;
+    padding: 3px;
+}
+
+.redie{
+    background-image: linear-gradient( #fd0e35, #9c2542);
+    color: antiquewhite;
+    border: 1px solid brown;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 3px;
+}
+
+.bluie{
+    background-image: linear-gradient(#0073ad, navy);
+    color: lightblue;
+    border: 1px solid blue;
+    border-radius: 3px;
+    text-decoration: none;
+
+    padding: 3px;
+}
+
+.firey{
+    background-image: linear-gradient(red, rgb(59, 24, 24));
+    color: antiquewhite;
+    border: 1px solid brown;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 3px;
+}
+
+#icons a{
+    text-decoration: none;
+    margin: 20px;
+}
+.black{
+    color: black;
+}
+.green{
+    color: green;
+}
+
+.color{
+    background-image: linear-gradient(#6f2da8, #3f26bf);
+    color: antiquewhite;
+    border: 1px solid #6f2da8;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 3px;
+    height: 200px;
+
+}
+
+.header{
+    background-image: none;
+}
+.darkgreenie{
+    background-image: linear-gradient(#00563f, #004225);
+    color: antiquewhite;
+    border: 1px solid greenyellow;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 3px;
+}
+
+.whitey{
+    background-image: linear-gradient(white, #e3dac9);
+    color: #3b3b6d;
+    border: 1px solid, #cfcfcf;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 3px;
+}
